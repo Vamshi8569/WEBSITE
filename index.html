@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WECASA GROUP | Premium Real Estate Consulting in Bangalore</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --navy-primary: #0A192F;
+            --navy-secondary: #112240;
+            --navy-light: #1E3A8A;
+            --gold-primary: #D4AF37;
+            --gold-secondary: #C5A059;
+            --gold-gradient: linear-gradient(135deg, #E6CA65 0%, #C5A059 50%, #9A7B38 100%);
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        header {
+            background-color: var(--navy-primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--gold-secondary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            gap: 2rem;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            margin-right: auto;
+        }
+
+        /* LOGO STYLING */
+        .brand-logo img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        /* 'WE' IN BLUE */
+        .brand-title .blue-text {
+            color: #3B82F6;
+            font-weight: 800;
+        }
+
+        /* 'CASA GROUP' IN GOLD */
+        .brand-title .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-tagline {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* RIGHTMOST MENU ALIGNMENT */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: var(--navy-primary);
+            padding: 0.7rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            margin-bottom: 2.5rem;
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.3rem;
+            color: var(--navy-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 0.5rem auto 1rem;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .vm-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold-primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .vm-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--navy-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        /* --- VALUES SECTION --- */
+        .values-bg {
+            background-color: var(--navy-primary);
+            color: var(--white);
+        }
+
+        .values-bg .section-header h2 {
+            color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--navy-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .value-card h3 {
+            color: var(--gold-primary);
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: #94A3B8;
+            font-size: 0.95rem;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--navy-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-title i {
+            color: var(--gold-secondary);
+        }
+
+        .services-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-item-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .service-item-card i {
+            color: var(--gold-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* --- WHY CHOOSE US --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .why-card i {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+
+        .why-card h3 {
+            color: var(--navy-primary);
+            margin-bottom: 0.8rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background: var(--navy-secondary);
+            color: var(--white);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            padding: 3rem 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #050C1A;
+            color: #64748B;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+        }
+
+        footer strong {
+            color: var(--gold-primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-grid, .vision-mission-grid, .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand-logo">
+                <!-- Replace 'logo.jpeg' with your actual hosted logo URL -->
+                <img src="logo.jpeg" alt="WECASA GROUP Logo">
+                <div class="brand-text">
+                    <span class="brand-title">
+                        <span class="blue-text">WE</span><span class="gold-text">CASA</span> <span class="gold-text">GROUP</span>
+                    </span>
+                    <span class="brand-tagline">Turning Goals Into Reality</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#values">Core Values</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn-gold">Schedule Consultation</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Every Dream Deserves the Right Address</p>
+            <h1>Turning Your Real Estate Goals Into Reality</h1>
+            <p>WECASA Group is a premium real estate consulting company based in Bangalore, dedicated to helping homebuyers, investors, and businesses find the right property with confidence.</p>
+            <a href="#services" class="btn-gold">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About WECASA Group</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>WECASA Group is a premium real estate consulting company committed to helping homebuyers, investors, and businesses make confident property decisions. We specialize in connecting our clients with the finest residential and commercial properties across Bangalore while ensuring complete transparency, professional guidance, and exceptional customer service throughout their real estate journey.</p>
+                    <p>At WECASA, we believe that buying a property is more than just a transaction—it is one of life's most significant milestones. Whether you are purchasing your first home, upgrading to your dream residence, investing for future growth, or searching for the perfect commercial space, our experienced team provides personalized solutions tailored to your unique goals.</p>
+                    <p>With strong relationships across leading builders, developers, financial institutions, and legal professionals, we simplify every step of the buying process—from property selection and site visits to home loan assistance, legal guidance, documentation support, registration, and after-sales service.</p>
+                </div>
+                <div class="about-text">
+                    <p>Our commitment extends beyond helping clients purchase properties. We strive to build lasting relationships based on trust, integrity, and long-term value. Every recommendation we make is driven by our clients' best interests, ensuring they receive expert advice and investment opportunities that align with their financial aspirations.</p>
+                    <p>As the real estate market continues to evolve, WECASA embraces innovation, market intelligence, and customer-first strategies to deliver a seamless and rewarding experience. Our dedication to excellence has positioned us as a trusted real estate advisor for families, professionals, investors, and corporate clients.</p>
+                    <p><strong>At WECASA Group, we don't simply sell properties—we create opportunities, build relationships, and help people turn their dreams into reality.</strong></p>
+                </div>
+            </div>
+
+            <!-- VISION & MISSION -->
+            <div class="vision-mission-grid">
+                <div class="vm-card">
+                    <h3><i class="fa-solid fa-eye" style="color: var(--gold-secondary);"></i> Our Vision</h3>
+                    <p>"To become a trusted company by delivering transparent, customer-centric, and innovative solutions that empower individuals, families, and businesses to achieve their property goals with confidence, long-term value, and peace of mind."</p>
+                </div>
+                <div class="vm-card">
+                    <h3><i class="fa-solid fa-bullseye" style="color: var(--gold-secondary);"></i> Our Mission</h3>
+                    <p>"To redefine customer experiences through excellence, integrity, and innovation. We are committed to delivering personalized solutions that inspire trust, create lasting value, and turn our clients' aspirations into reality."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES SECTION -->
+    <section id="values" class="values-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Customer First</h3>
+                    <p>Every decision begins with understanding our customers' needs and delivering personalized solutions.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Commitment</h3>
+                    <p>We remain dedicated to delivering results with professionalism, accountability, and unwavering support.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Trust</h3>
+                    <p>We believe trust is earned through consistent actions, reliable guidance, and long-term relationships.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We conduct every transaction with honesty, ethics, and complete transparency.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We continuously strive for the highest standards in service quality and customer satisfaction.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We leverage technology, market insights, and modern solutions to enhance the customer experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="divider"></div>
+                <p style="color: var(--text-muted);">End-to-end real estate solutions across Bangalore</p>
+            </div>
+
+            <!-- RESIDENTIAL -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-house"></i> Residential
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential Flats / Apartments</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Pre-Launch Projects</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> New Launch Projects</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready-to-Move Homes</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Luxury Villas</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Independent House</div>
+                </div>
+            </div>
+
+            <!-- PLOTS / LAND -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-map-location-dot"></i> Plots / Land
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential / Gated Community Plots</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Villa Plots</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Commercial Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Industrial Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Farm Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Agriculture Land</div>
+                </div>
+            </div>
+
+            <!-- COMMERCIAL -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-building"></i> Commercial
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Coworking Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready to Move Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Bare Shell Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Shops & Retail Space</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE WECASA SECTION -->
+    <section id="why-us" style="background-color: #F1F5F9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose WECASA?</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>End-to-End Solutions</h3>
+                    <p>Delivering comprehensive real estate solutions under one roof.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Smooth & Secure Journey</h3>
+                    <p>Making every property journey smooth, secure, and rewarding.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Value Creation</h3>
+                    <p>Creating long-term value through professionalism, integrity, and innovation.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <h3>Customer-Centric & Transparent</h3>
+                    <p>Transparent transactions, expert market knowledge, and strong after-sales support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Connect With Us</h2>
+                <div class="divider"></div>
+                <p style="color: var(--text-muted);">Let’s turn your real estate goals into reality.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div>
+                        <h3>WECASA GROUP</h3>
+                        <p style="color: #94A3B8; margin-bottom: 2rem;">Bangalore, India</p>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 9886 704 705</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>info@wecasagroup.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Bangalore, Karnataka, India</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="https://wa.me/919886704705" target="_blank" class="btn-gold" style="width: 100%; text-align: center;">
+                            <i class="fa-brands fa-whatsapp"></i> Instant WhatsApp Chat
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! A WECASA Group property advisor will contact you shortly.');">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Interested Property Service</label>
+                        <select required>
+                            <option value="">Select Service</option>
+                            <option>Residential Apartments / Villas</option>
+                            <option>Residential / Villa Plots</option>
+                            <option>Commercial / Office Spaces</option>
+                            <option>Industrial / Farm Land</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message (Optional)</label>
+                        <textarea rows="3" placeholder="Tell us your budget or location preference..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <strong>WECASA GROUP</strong>. All rights reserved. | Turning Goals Into Reality</p>
+    </footer>
+
+</body>
+</html>
