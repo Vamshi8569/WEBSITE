@@ -430,17 +430,134 @@
             color: var(--gold-primary);
         }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.2rem; }
-            .about-grid, .vision-mission-grid, .contact-container { grid-template-columns: 1fr; }
-            .btn-gold {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
+
+        /* ========================================================= */
+        /* --- RESPONSIVE MEDIA QUERIES (TABLETS & MOBILE DEVICES) --- */
+        /* ========================================================= */
+
+        /* Tablets & Medium Screens (<= 992px) */
+        @media (max-width: 992px) {
             .navbar {
-                padding: 0.8rem 1rem;
-                gap: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.88rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid, .contact-container {
+                gap: 2rem;
+            }
+        }
+
+        /* Small Tablets & Mobile Devices (<= 768px) */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show Mobile Hamburger Icon */
+            }
+
+            /* Convert Navigation Links to Mobile Dropdown Menu */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--navy-primary);
+                border-bottom: 2px solid var(--gold-secondary);
+                padding: 1.5rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+                gap: 1.2rem;
+            }
+
+            .nav-links.active {
+                display: flex; /* Toggle menu open/close */
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                font-size: 1.05rem;
+                display: block;
+                padding: 0.4rem 0;
+            }
+
+            .navbar .btn-gold {
+                display: none; /* Hide header CTA button on small screens to fit layout */
+            }
+
+            section {
+                padding: 3.5rem 1.2rem;
+            }
+
+            .hero {
+                padding: 4.5rem 1.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-grid, 
+            .vision-mission-grid, 
+            .contact-container {
+                grid-template-columns: 1fr; /* Convert to 1 column layout */
+            }
+
+            .contact-info, 
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .services-list-grid {
+                grid-template-columns: 1fr; /* Single column service list */
+            }
+        }
+
+        /* Extra Small Screens (<= 480px) */
+        @media (max-width: 480px) {
+            .brand-title {
+                font-size: 1.2rem;
+            }
+
+            .brand-logo img {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .vm-card, .value-card, .why-card {
+                padding: 1.5rem;
+            }
+
+            .category-title {
+                font-size: 1.3rem;
             }
         }
     </style>
