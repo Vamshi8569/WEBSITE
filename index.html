@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
     
     <script type="application/ld+json">
     {
@@ -101,12 +102,14 @@
         }
 
         .navbar {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
             display: flex;
             align-items: center;
-            padding: 0.8rem 2rem;
-            gap: 2rem;
+            justify-content: space-between;
+            padding: 0.8rem 0.8rem 0.8rem 0.25rem;
+            gap: 1rem;
         }
 
         .brand-logo {
@@ -114,7 +117,10 @@
             align-items: center;
             gap: 15px;
             text-decoration: none;
-            margin-right: auto;
+            margin-right: 0;
+            justify-content: flex-start;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         /* LOGO STYLING */
@@ -127,13 +133,15 @@
         .brand-text {
             display: flex;
             flex-direction: column;
+            min-width: 0;
         }
 
         .brand-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+            white-space: nowrap;
             line-height: 1;
         }
 
@@ -149,15 +157,22 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.05rem, 1.6vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            line-height: 1.1;
+            margin-bottom: 0rem;
         }
 
         .brand-tagline {
-            font-size: 0.6rem;
+            font-size: 0.56rem;
             letter-spacing: 2px;
             color: var(--white);
             text-transform: uppercase;
             font-weight: 500;
-            margin-top: 4px;
+            margin-top: 2px;
+            white-space: nowrap;
         }
 
         /* RIGHTMOST MENU ALIGNMENT */
@@ -167,12 +182,15 @@
             gap: 1.8rem;
             align-items: center;
             margin-left: auto;
+            justify-content: flex-end;
+            flex: 1;
+            padding-right: 0.2rem;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 800;
             font-size: 0.95rem;
             transition: color 0.3s;
             white-space: nowrap;
@@ -201,6 +219,34 @@
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
+        .hero-service-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-service-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.09);
+            border: 3px solid rgba(212, 175, 55, 0.7);
+            color: var(--white);
+            padding: 0.8rem 1.2rem;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            min-width: 180px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .hero-service-pill:hover {
+            transform: translateY(-2px);
+            background: rgba(212, 175, 55, 0.12);
+        }
+
         /* Mobile Hamburger Icon */
         .menu-toggle {
             display: none;
@@ -210,15 +256,38 @@
         }
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80') center/cover;
+            position: relative;
+            overflow: hidden;
             color: var(--white);
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
+            isolation: isolate;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* background: url('https://i.pinimg.com/736x/c1/dc/c5/c1dcc59775d24fadaab0716c940f5e72.jpg') center/cover; */
+            /* background: url('cover_img.jpeg') center/cover; */
+            background: url('https://i.pinimg.com/1200x/54/d9/73/54d9737ef3ec45066a29f10d1fc32a39.jpg') center/cover;
+            filter: blur(0.1px);
+            transform: scale(1.05);
+            z-index: -2; 
+        }
+
+         .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(17, 95, 212, 0.76), rgba(10, 25, 47, 0.26));
+            z-index: -1;
+        } 
+
         .hero-content {
+            position: relative;
             max-width: 900px;
-            margin: 0 auto;
+            margin:  0 auto;
         }
 
         .hero-subtitle {
@@ -226,26 +295,30 @@
             font-size: 1.1rem;
             font-weight: 600;
             letter-spacing: 2px;
-            text-transform: uppercase;
             margin-bottom: 1rem;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 3rem;
+            font-size: 4rem;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            /* font-family: 'Plus Jakarta Sans', sans-serif; */
+            font-family:pacifico;
+            font-size: 1rem;
             color: #CBD5E1;
             margin-bottom: 2.5rem;
+            /* font-weight: 800; */
+            text-transform: none;
         }
 
         /* --- SECTIONS COMMON --- */
         section {
-            padding: 5rem 2rem;
+            padding: 1.5rem 1.5rem;
         }
 
         .container {
@@ -255,7 +328,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: rem;
         }
 
         .section-header h2 {
@@ -391,16 +464,22 @@
         /* --- WHY CHOOSE US --- */
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, minmax(0, 1.8fr));
+            gap: 1.2rem;
+            align-items: stretch;
         }
 
         .why-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.6rem 1.2rem;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             text-align: center;
+            min-width: 220px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .why-card i {
@@ -413,6 +492,13 @@
             color: var(--navy-primary);
             margin-bottom: 0.8rem;
             font-family: 'Cinzel', serif;
+            line-height: 1.3;
+        }
+
+        .why-card p {
+            line-height: 1.4;
+            min-height: 2.8em;
+            margin: 0;
         }
 
         /* --- CONTACT SECTION --- */
@@ -514,7 +600,9 @@
             .navbar {
                 padding: 0.8rem 1.5rem;
             }
-
+            .brand-title {
+                font-size: 1rem;
+            }
             .nav-links {
                 gap: 1.2rem;
             }
@@ -630,6 +718,10 @@
             .services-list-grid {
                 grid-template-columns: 1fr;
             }
+
+            .why-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
         }
 
         /* Extra Small Screens (<= 480px) */
@@ -639,7 +731,7 @@
             }
 
             .brand-title {
-                font-size: 1.05rem;
+                font-size: 1rem;
             }
 
             .brand-logo img {
@@ -682,14 +774,12 @@
                 <img src="logo.jpeg" alt="WECASA Group real estate consulting logo in Bangalore">
                 <div class="brand-text">
                     <span class="brand-title">
-                        <span class="gold-text">WECASA</span> <span class="gold-text">GROUP</span>
+                        <span class="gold-text">WECASA</span> 
                     </span>
                     <span class="brand-tagline">Turning Goals Into Reality</span>
                 </div>
             </a>
-            <!-- <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-list">
-                <i class="fa-solid fa-bars"></i>
-            </button> -->
+         
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -710,12 +800,105 @@
     <!-- HERO SECTION -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Every Dream Deserves the Right Address</p>
-            <h1>Turning Your Real Estate Goals Into Reality</h1>
-            <p>WECASA Group is a premium real estate consulting company based in Bangalore, dedicated to helping homebuyers, investors, and businesses find the right property with confidence.</p>
-            <a href="#services" class="btn-gold">Explore Our Services</a>
+            <p class="hero-subtitle"></p>
+            <h1>Every Dream Deserves the Right Address</h1>
+            <p>At wecasa group, we create opportunities, build relationships, and help people turn their dreams into reality.</p>
+            <div class="hero-service-grid">
+                <a href="#services" class="hero-service-pill">Residential</a>
+                <a href="#services" class="hero-service-pill">Commercial</a>
+                <a href="#services" class="hero-service-pill">Plots / Land</a>
+            </div>
         </div>
     </section>
+
+   <!-- WHY CHOOSE WECASA SECTION -->
+    <section id="why-us" style="background-color: #F1F5F9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose WECASA?</h2>
+                <!-- <div class="divider"></div> -->
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>End-to-End Solutions</h3>
+                    <p>Delivering comprehensive real estate solutions under one roof.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Smooth & Secure Journey</h3>
+                    <p>Making every property journey smooth, secure, and rewarding.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Value Creation</h3>
+                    <p>Creating long-term value through professionalism, integrity, and innovation.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <h3>Customer-Centric & Transparent</h3>
+                    <p>Transparent transactions, expert market knowledge, and strong after-sales support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="divider"></div>
+                <p style="color: var(--text-muted);">End-to-end real estate solutions across Bangalore</p>
+            </div>
+
+            <!-- RESIDENTIAL -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-house"></i> Residential
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential Flats / Apartments</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Pre-Launch Projects</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> New Launch Projects</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready-to-Move Homes</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Luxury Villas</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Independent House</div>
+                </div>
+            </div>
+
+            <!-- PLOTS / LAND -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-map-location-dot"></i> Plots / Land
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential / Gated Community Plots</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Villa Plots</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Commercial Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Industrial Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Farm Land</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Agriculture Land</div>
+                </div>
+            </div>
+
+            <!-- COMMERCIAL -->
+            <div class="services-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-building"></i> Commercial
+                </div>
+                <div class="services-list-grid">
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Coworking Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready to Move Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Bare Shell Office Space</div>
+                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Shops & Retail Space</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ABOUT US SECTION -->
     <section id="about">
@@ -789,93 +972,8 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <div class="divider"></div>
-                <p style="color: var(--text-muted);">End-to-end real estate solutions across Bangalore</p>
-            </div>
 
-            <!-- RESIDENTIAL -->
-            <div class="services-category">
-                <div class="category-title">
-                    <i class="fa-solid fa-house"></i> Residential
-                </div>
-                <div class="services-list-grid">
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential Flats / Apartments</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Pre-Launch Projects</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> New Launch Projects</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready-to-Move Homes</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Luxury Villas</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Independent House</div>
-                </div>
-            </div>
-
-            <!-- PLOTS / LAND -->
-            <div class="services-category">
-                <div class="category-title">
-                    <i class="fa-solid fa-map-location-dot"></i> Plots / Land
-                </div>
-                <div class="services-list-grid">
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Residential / Gated Community Plots</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Villa Plots</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Commercial Land</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Industrial Land</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Farm Land</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Agriculture Land</div>
-                </div>
-            </div>
-
-            <!-- COMMERCIAL -->
-            <div class="services-category">
-                <div class="category-title">
-                    <i class="fa-solid fa-building"></i> Commercial
-                </div>
-                <div class="services-list-grid">
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Coworking Office Space</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Ready to Move Office Space</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Bare Shell Office Space</div>
-                    <div class="service-item-card"><i class="fa-solid fa-angle-right"></i> Shops & Retail Space</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY CHOOSE WECASA SECTION -->
-    <section id="why-us" style="background-color: #F1F5F9;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose WECASA?</h2>
-                <div class="divider"></div>
-            </div>
-
-            <div class="why-grid">
-                <div class="why-card">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h3>End-to-End Solutions</h3>
-                    <p>Delivering comprehensive real estate solutions under one roof.</p>
-                </div>
-                <div class="why-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Smooth & Secure Journey</h3>
-                    <p>Making every property journey smooth, secure, and rewarding.</p>
-                </div>
-                <div class="why-card">
-                    <i class="fa-solid fa-lightbulb"></i>
-                    <h3>Value Creation</h3>
-                    <p>Creating long-term value through professionalism, integrity, and innovation.</p>
-                </div>
-                <div class="why-card">
-                    <i class="fa-solid fa-handshake-angle"></i>
-                    <h3>Customer-Centric & Transparent</h3>
-                    <p>Transparent transactions, expert market knowledge, and strong after-sales support.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+ 
     <!-- CONTACT SECTION -->
     <section id="contact">
         <div class="container">
