@@ -1040,7 +1040,7 @@
             <div class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <a  id="scheduleConsultationBtn" class="btn-gold">Schedule Consultation</a>
+            <a href="#contact" id="scheduleConsultationBtn" class="btn-gold">Schedule Consultation</a>
             <ul class="nav-links" id="nav-list">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#why-us">The WECASA Advantage</a></li>
@@ -1069,18 +1069,12 @@
                         <input id="modal-phone" name="phone" type="tel" placeholder="Enter your phone number" required>
                     </div>
                     <div>
-                        <label for="modal-service">Interested Property Service</label>
-                        <select id="modal-service" name="service" required>
-                            <option value="">Select Service</option>
-                            <option>Residential Apartments / Villas</option>
-                            <option>Residential / Villa Plots</option>
-                            <option>Commercial / Office Spaces</option>
-                            <option>Industrial / Farm Land</option>
-                        </select>
+                        <label for="modal-email">Email Address</label>
+                        <input id="modal-email" name="email" type="email" placeholder="Enter your email address" required>
                     </div>
                     <div>
-                        <label for="modal-message">Message (Optional)</label>
-                        <textarea id="modal-message" name="message" placeholder="Tell us your budget or location preference..."></textarea>
+                        <label for="modal-message">Message</label>
+                        <textarea id="modal-message" name="message" placeholder="Please tell us your requirement (BHK, budget & location preference.)" required></textarea>
                     </div>
                     <div class="modal-actions">
                         <button type="button" class="btn-secondary" id="cancelConsultation">Cancel</button>
@@ -1429,14 +1423,19 @@
                 const formData = new FormData(consultationForm);
                 const name = (formData.get('name') || '').toString().trim();
                 const phone = (formData.get('phone') || '').toString().trim();
-                const service = (formData.get('service') || '').toString().trim();
+                const email = (formData.get('email') || '').toString().trim();
                 const message = (formData.get('message') || '').toString().trim();
+
+                if (!name || !phone || !email || !message) {
+                    alert('Please fill in your name, phone number, email address, and message before submitting.');
+                    return;
+                }
 
                 const payload = {
                     name,
                     phone,
-                    service,
-                    message: message || 'No additional message',
+                    email,
+                    message,
                     _subject: 'New Consultation Request from ' + name,
                     _captcha: 'false'
                 };
