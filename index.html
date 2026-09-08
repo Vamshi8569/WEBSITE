@@ -780,13 +780,129 @@
         }
 
         /* --- FOOTER --- */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1.5fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .footer-brand .brand-title {
+            white-space: normal;
+        }
+
+        .footer-brand p {
+            color: #cbd5e1;
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-links,
+        .legal-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .footer-links a,
+        .legal-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover,
+        .legal-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact-item i {
+            color: var(--gold-primary);
+            margin-top: 0.2rem;
+            width: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 1rem;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+
+        .footer-social .whatsapp { color: #25D366; }
+        .footer-social .facebook { color: #1877F2; }
+        .footer-social .instagram {
+            background: linear-gradient(135deg, #feda75 0%, #fa7e1e 18%, #d62976 42%, #962fbf 68%, #4f5bd5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            border-color: rgba(255,255,255,0.12);
+        }
+        .footer-social .linkedin { color: #0A66C2; }
+
         footer {
             background-color: #050C1A;
             color: #64748B;
-            padding: 2rem;
-            text-align: center;
+            padding: 3rem 2rem 2rem;
             border-top: 1px solid rgba(255,255,255,0.05);
             font-size: 0.85rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            text-align: center;
         }
 
         footer strong {
@@ -1313,10 +1429,10 @@
                         <a href="https://wa.me/919886704705" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="whatsapp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook">
+                        <a href="https://www.facebook.com/Wecasagroup" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram">
+                        <a href="https://www.instagram.com/wecasagroup/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin">
@@ -1330,7 +1446,59 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 <strong>WECASA GROUP</strong>. All rights reserved. | Turning Goals Into Reality</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#top" class="brand-logo" aria-label="WECASA Group home">
+                    <img src="images/logo.png" alt="WECASA Group logo" onerror="this.style.display='none'">
+                    <div class="brand-text">
+                        <div class="brand-title">
+                            <span class="gold-text">WECASA GROUP</span>
+                        </div>
+                        <div class="brand-tagline">Turning Goals Into Reality</div>
+                    </div>
+                </a>
+                <p>We help buyers, investors, and families discover premium residential, commercial, and land opportunities across Bangalore with honest guidance and end-to-end support.</p>
+                <div class="footer-social" aria-label="Social media links">
+                    <a href="https://wa.me/919886704705" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/Wecasagroup" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/wecasagroup/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Bangalore, Karnataka, India</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+919886704705">+91 9886 704 705</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@wecasagroup.com">info@wecasagroup.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 <strong>WECASA GROUP</strong>. All rights reserved. | Turning Goals Into Reality</p>
+        </div>
     </footer>
     </main>
     
